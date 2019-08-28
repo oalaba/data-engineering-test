@@ -48,6 +48,7 @@ with open("C:/Users/C083478/Downloads/data.tsv", "r", encoding='UTF-16LE') as r:
                         new_list[1].pop(0)
                         for j in new_list:
                             data_list = data_list + j
+
                     else:
                         print('*'*80)
                         print('exception: {0}'.format(new_list))
@@ -58,10 +59,10 @@ with open("C:/Users/C083478/Downloads/data.tsv", "r", encoding='UTF-16LE') as r:
                 print('*'*80)
                 print('exception: {0}'.format(new_list))
 
-        with open('result2.tsv', 'a', encoding='UTF-8') as f:
+        with open('result3.tsv', 'a', encoding='UTF-8') as f:
             line = '\t'.join(data_list)
             line = line+'\n'
-            f.write(line)
+            f.write(line.replace("-", '').replace('/',''))
         i = i + 1
 f.close()
 r.close()
